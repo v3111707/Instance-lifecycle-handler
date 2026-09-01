@@ -5,6 +5,7 @@ This is a Kubernetes-ready service that keeps an infrastructure inventory in a c
 The service uses async functions for message processing and network operations, so multiple messages can be processed concurrently while the service waits for the message broker or inventory store.
 
 The service is designed to run continuously in Kubernetes. It supports graceful shutdown when a pod receives a termination signal. The service stops accepting new messages, waits for messages that are already being processed, and then closes its connection to the message broker.
+## Features:
 
 * **Graceful Kubernetes shutdown protects in-flight messages**
   The service handles `SIGTERM` and `SIGINT` to react to pod termination. It first stops the queue consumer and then waits for active processing tasks to finish before closing the broker connection. This reduces the risk of interrupted processing during deployments, pod restarts, and scaling.
