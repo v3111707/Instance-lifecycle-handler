@@ -21,3 +21,5 @@ The service is designed to run continuously in Kubernetes. It supports graceful 
 
 * **Structured logs and metrics make message processing easier to observe** 
   Logs use structured JSON and can include the instance hostname. The service also records message counters and processing time metrics. This helps detect failures and slow processing.
+
+> **Note:** This repository is a sanitized version of a production project. All company-specific information, credentials, internal URLs, infrastructure details, and other sensitive data have been removed.
