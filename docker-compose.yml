@@ -1,0 +1,9 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    ports:
+      - "5672:5672"    # AMQP
+      - "5671:5671"    # AMQPS
+      - "15672:15672"  # Management UI
+    environment:
+      RABBITMQ_DEFAULT_VHOST: dev
